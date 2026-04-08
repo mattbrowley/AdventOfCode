@@ -1,0 +1,6 @@
+# Advent of Code Year 2015
+
+These puzzles are actually being solved beginning in 2023.
+
+For the 2015 puzzles, I will use Python, with an emphasis on
+easy coding and readability, rather than optimization.

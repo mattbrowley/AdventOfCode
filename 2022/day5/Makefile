@@ -1,0 +1,2 @@
+run:
+	python day5.py
