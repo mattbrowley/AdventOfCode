@@ -1,6 +1,6 @@
 import numpy as np
 
-with open("Input3.txt", "r") as f:
+with open("./Input3.txt", "r") as f:
     lines = f.readlines()
 # Part 1
 
@@ -30,11 +30,10 @@ OFilter = np.arange(0, len(lines), 1)
 CFilter = np.arange(0, len(lines), 1)
 # for i in range(11, -1, -1):
 for i in range(12):
-    print(len(OFilter), len(CFilter))
     OColumn = []
     for j in OFilter:
         OColumn.append(data[j][i])
-    if sum(OColumn) > len(OColumn) / 2:
+    if sum(OColumn) >= len(OColumn) / 2:
         majority = 1
     else:
         majority = 0
@@ -47,7 +46,7 @@ for i in range(12):
         CColumn = []
         for k in CFilter:
             CColumn.append(data[k][i])
-        if sum(CColumn) > len(CColumn) / 2:
+        if sum(CColumn) >= len(CColumn) / 2:
             majority = 1
         else:
             majority = 0
@@ -60,7 +59,6 @@ O2bin = data[OFilter[0]]
 CO2bin = data[CFilter[0]]
 O2 = 0
 CO2 = 0
-print(O2bin, CO2bin)
 for i, (obit, cbit) in enumerate(zip(O2bin[::-1], CO2bin[::-1])):
     # print(obit, cbit)
     O2 += 2**i * obit
